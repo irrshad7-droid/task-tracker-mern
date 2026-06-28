@@ -5,8 +5,8 @@ A modern, production-quality Task Management application built with the MERN sta
 Designed to be lightweight, responsive, and completely scalable, featuring a custom CSS design system, optimistic UI updates, and robust error handling.
 
 ## 🚀 Live Demos
-* **Frontend (Vercel)**: `[Your Vercel URL Here]`
-* **Backend API (Render)**: `[Your Render URL Here]`
+* **Frontend (Vercel)**: `https://task-tracker-mern-livid.vercel.app`
+* **Backend API (Render)**: `https://task-tracker-mern-n7gt.onrender.com`
 
 ---
 
