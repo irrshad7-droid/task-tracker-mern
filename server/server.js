@@ -21,20 +21,20 @@ const app = express();
 
 // CORS: allows the React frontend (running on a different port) to make
 // requests to this API. In production, CLIENT_URL is the Vercel URL.
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://task-tracker-mern-livid.vercel.app",
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "https://task-tracker-mern-livid.vercel.app",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
 
-// IMPORTANT
-app.options("*", cors());
+app.use(cors(corsOptions));
+
+// ADD THIS
+app.options("*", cors(corsOptions));
 // Morgan: logs every HTTP request to the console (method, path, status, time).
 // 'dev' format is colorful and concise — great for development.
 app.use(morgan('dev'));
