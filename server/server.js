@@ -23,12 +23,18 @@ const app = express();
 // requests to this API. In production, CLIENT_URL is the Vercel URL.
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: [
+      "http://localhost:5173",
+      "https://task-tracker-mern-livid.vercel.app",
+    ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
+// IMPORTANT
+app.options("*", cors());
 // Morgan: logs every HTTP request to the console (method, path, status, time).
 // 'dev' format is colorful and concise — great for development.
 app.use(morgan('dev'));
